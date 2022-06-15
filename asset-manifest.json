@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.js": "/player/static/js/main.86e64b66.js",
+    "main.js": "/player/static/js/main.a03ab722.js",
     "static/media/armenia.mp3": "/player/static/media/armenia.00142f79f390bcd4698d.mp3",
-    "static/media/speed.svg": "/player/static/media/speed.fda3206eac26de406b1aa3cc3c757711.svg",
+    "static/media/speed.svg": "/player/static/media/speed.d53609e68293388453b84c077c886602.svg",
     "index.html": "/player/index.html",
-    "static/media/off.svg": "/player/static/media/off.8a2c2606237f1fe506cdbf3bef1918c0.svg",
-    "static/media/volume.svg": "/player/static/media/volume.9941df86dd3881e6bc38b5752894331a.svg",
-    "static/media/on.svg": "/player/static/media/on.ba5f263f4550f25eab1316a10c9fc5c3.svg",
-    "main.86e64b66.js.map": "/player/static/js/main.86e64b66.js.map"
+    "static/media/vol1.svg": "/player/static/media/vol1.d94cda66d719aed608a301484d6aa607.svg",
+    "static/media/vol2.svg": "/player/static/media/vol2.f4958ffff2042bf0849302ca38b32e4e.svg",
+    "static/media/vol3.svg": "/player/static/media/vol3.ec932da1294b31122dd1a9ce782a66df.svg",
+    "static/media/vol4.svg": "/player/static/media/vol4.5951b54f894608a8a2d6bf9cecf05af7.svg",
+    "static/media/off.svg": "/player/static/media/off.407ff553fd1142a0e21e1d3fc23e4ddc.svg",
+    "static/media/on.svg": "/player/static/media/on.d8a3de15405e653183ab6e4b6c45ed9f.svg",
+    "main.a03ab722.js.map": "/player/static/js/main.a03ab722.js.map"
   },
   "entrypoints": [
-    "static/js/main.86e64b66.js"
+    "static/js/main.a03ab722.js"
   ]
 }
