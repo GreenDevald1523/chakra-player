@@ -30,7 +30,7 @@ export default function Audio() {
   const handleChange = () => {
     const audio = audioRef.current
     if (flag) {
-      audio.volume = 0.5
+      audio.volume = 0.66
       setFlag(false)
     }
     if (!isPlaying) {
@@ -46,6 +46,7 @@ export default function Audio() {
 
   const handleVolume = (e) => {
     setVolume(e.currentTarget.volume * 100)
+    console.log(volume)
   }
 
   const setPlayerCurrentTime = (time) => {
@@ -80,7 +81,6 @@ export default function Audio() {
       ]}
     >
       <Box
-        w="495px"
         h="55px"
         borderRadius={20}
         bg="white"
@@ -94,8 +94,7 @@ export default function Audio() {
             boxSize="2em"
             target="_blank"
             onClick={handleChange}
-            variant="unstyled"
-          >
+            variant="unstyled">
             <Img src={btn === 'of' ? pauseB : playB} alt="armenia" />
           </IconButton>
           <audio
@@ -112,7 +111,7 @@ export default function Audio() {
             updatePlayerTime={setPlayerCurrentTime}
             value={currentTime}
           />
-          <SliderV value={volume} updateGlobalNum={setPlayerVolume} />
+          <SliderV updateGlobalNum={setPlayerVolume} />
           <Menu>
             <MenuButton boxSize="2em" pos="relative">
               <Img src={Speed} alt="armenia2" />
