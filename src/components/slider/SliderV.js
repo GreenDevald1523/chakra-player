@@ -1,16 +1,9 @@
 import React, {useState} from 'react'
 import {
-  Slider,
-  SliderTrack,
-  SliderFilledTrack,
-  SliderThumb,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverBody,
-  PopoverArrow,
-  IconButton,
+  ChakraProvider, 
   Img,
+  IconButton,
+  Flex
 } from '@chakra-ui/react'
 import vol1 from './vol1.svg'
 import vol2 from './vol2.svg'
@@ -41,39 +34,15 @@ function SliderV() {
     }
   }
   return (
-    <Popover defaultIsOpen={false}>
-      <PopoverTrigger>
-        <IconButton
-          mt="13px"
-          ml="auto"
-          mr="-25px"
-          h="20px"
-          w="18px"
-          target="_blank"
-          variant="unstyled"
-        >
-          <Img src={Volume} alt="armenia2" />
-        </IconButton>
-      </PopoverTrigger>
-      <PopoverContent w="40px" mt="10px">
-        <PopoverArrow />
-        <PopoverBody>
-          <Slider
-            orientation="vertical"
-            onChange={updateGlobalNum}
-            minH={32}
-            max={100}
-            min={0}
-            value={value}
-          >
-            <SliderTrack>
-              <SliderFilledTrack />
-            </SliderTrack>
-            <SliderThumb />
-          </Slider>
-        </PopoverBody>
-      </PopoverContent>
-    </Popover>
+    <React.StrictMode>
+      <ChakraProvider>
+        <Flex alignItems='center' justifyContent='center' h='57px' w='50px'>
+          <IconButton h='30px' w='20px' onClick={handleLoudChange} variant="unstyled" bg='none'>
+            <Img src={music} alt='muz'/>
+          </IconButton>
+        </Flex>
+      </ChakraProvider>
+    </React.StrictMode>
   )
 }
 
