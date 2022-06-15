@@ -90,7 +90,7 @@ function Audio() {
           '495px', 
         ]}>
           <Flex>
-            <IconButton mt='17px' ml='21px' h='16px' w='18px' target="_blank" onClick={handleChange} variant="unstyled">
+            <IconButton boxSize='2em' mt='12px' mr='-5px' ml='20px' h='18px' w='18px' target="_blank" onClick={handleChange} variant="unstyled" bg='none'>
               <Img src={btn === 'of' ? pauseB : playB} alt='armenia' />
             </IconButton>
             <audio
@@ -112,7 +112,7 @@ function Audio() {
               updateGlobalNum={setPlayerVolume}
               />
             <Menu>
-              <MenuButton mt='13px' ml='auto' pos='relative'>
+              <MenuButton mt='13px' mr='13px' ml='auto' pos='relative'>
                 <Img src={Speed} alt='armenia2'/>
               </MenuButton>
               <MenuList minWidth='40px'>
