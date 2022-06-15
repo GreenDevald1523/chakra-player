@@ -1,4 +1,4 @@
-import { ChakraProvider, Flex, Text } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 
 function ControlPanel({ duration, currentTime }) {
@@ -31,14 +31,14 @@ function ControlPanel({ duration, currentTime }) {
   }
 
   return (
-    <React.StrictMode>
-      <ChakraProvider>
-        <Flex mt='16px' w='93px'>
-          <Text fontSize='md' color='#2B6CB0'>{secondsToHms(currentTime)}/</Text>
-          <Text fontSize='md' color='#2B6CB0'>{secondsToHms(duration)}</Text>
-        </Flex>
-      </ChakraProvider>
-    </React.StrictMode>
+    <Flex mt="16px" w="93px">
+      <Text fontSize="md" color="#2B6CB0">
+        {secondsToHms(currentTime)}/
+      </Text>
+      <Text fontSize="md" color="#2B6CB0">
+        {secondsToHms(duration)}
+      </Text>
+    </Flex>
   )
 }
 export default ControlPanel
