@@ -19,12 +19,6 @@ import ChakraPlayer from 'ChakraPlayer'
 <ChakraPlayer url='****.mp3' />
 ```
 
-### Props
-
-Prop | Description | Default
----- | ----------- | -------
-`url` | The url of an audio that has to be in `.mp3/.mp4` format
-
 Instead of using a common `url` of a `.mp3`, you also can download this file to your project folder and refer to it:
 
 ```shell 
@@ -35,6 +29,12 @@ import song form './audio.mp3'
 // Add {.mp3 / .mp4} file format
 <ChakraPlayer url={song} />
 ```
+
+### Props
+
+Prop | Description | Default
+---- | ----------- | -------
+`url` | The url or file of an audio that has to be in `.mp3/.mp4` format
 
 ### Demo
 
