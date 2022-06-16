@@ -2,6 +2,7 @@
   "name": "last-vers",
   "version": "0.1.0",
   "private": true,
+  "licence": "MIT",
   "homepage": "https://greendevald1523.github.io/player/",
   "dependencies": {
     "@chakra-ui/react": "^2.2.1",
