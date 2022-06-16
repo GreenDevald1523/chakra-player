@@ -1,4 +1,4 @@
-# ChakraPlayer  `v1.0`
+# chakra-player  `v1.0`
 React player, made with [`Chakra UI`](https://chakra-ui.com/), can play the audio that you push in it.
 
 ### Usage
@@ -13,7 +13,7 @@ yarn add ChakraPlayer
 
 ```shell
 import React from 'react'
-import ChakraPlayer from 'ChakraPlayer'
+import ChakraPlayer from 'chakra-player'
 
 // Add {.mp3 / .mp4} file format
 <ChakraPlayer url='****.mp3' />
@@ -23,7 +23,7 @@ Instead of using a common `url` of a `.mp3`, you also can download this file to 
 
 ```shell 
 import React from 'react'
-import ChakraPlayer from 'ChakraPlayer'
+import ChakraPlayer from 'chakra-player'
 import song form './audio.mp3'
 
 // Add {.mp3 / .mp4} file format
