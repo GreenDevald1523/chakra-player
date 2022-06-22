@@ -1,24 +1,19 @@
-import {
-  Flex,
-  IconButton,
-  Img,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuOptionGroup,
-  MenuItemOption,
-  Center,
-} from '@chakra-ui/react'
+import PropTypes from 'prop-types'
+import { Flex, Center } from '@chakra-ui/react'
 import { useState, useRef } from 'react'
 import song from '../img/armenia.mp3'
-import Speed from '../img/speed.svg'
-import pauseB from '../img/on.svg'
-import playB from '../img/off.svg'
+
+// Components
 import ControlPanel from '../components/controls/ControlPanel'
 import SliderC from '../components/slider/SliderC'
 import SliderV from '../components/slider/SliderV'
+import PlayPause from '../components/controls/PlayPause'
+import PlaySpeed from '../components/controls/PlaySpeed'
 
-export default function Audio() {
+
+export default function Audio({
+  color = 'blue.600',
+}) {
   const [btn, setBtn] = useState('on')
   const [percentage, setPercentage] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -72,81 +67,30 @@ export default function Audio() {
         src={song}
       />
       {/* UI плеера */}
-      <Center p={5}>
-        <Flex
-          px="2em"
-          py="1em"
-          borderRadius={20}
-          bg="white"
-          boxShadow="0px 0 5px grey"
-        >
-          <IconButton
-            boxSize="2em"
-            target="_blank"
-            onClick={handleChange}
-            variant="unstyled"
-          >
-            <Img src={btn === 'of' ? pauseB : playB} alt="armenia" />
-          </IconButton>
-          <ControlPanel duration={duration} currentTime={currentTime} />
+      <Center w="100%">
+        <Flex px="2em" py="1em" borderRadius={20} bg="white" w="100%">
+          <PlayPause handleChange={handleChange} color={color} btn={btn} />
+          <ControlPanel
+            color={color}
+            duration={duration}
+            currentTime={currentTime}
+          />
           <SliderC
+            color={color}
             percentage={percentage}
             max={duration || 1}
             updatePlayerTime={setPlayerCurrentTime}
             value={currentTime}
           />
-          <SliderV updateGlobalNum={setPlayerVolume} />
-          <Menu>
-            <MenuButton boxSize="2em" pos="relative">
-              <Img src={Speed} alt="armenia2" />
-            </MenuButton>
-            <MenuList minWidth="40px">
-              <MenuOptionGroup defaultValue="1">
-                <MenuItemOption
-                  value="0.25"
-                  onClick={() => {
-                    audioRef.current.playbackRate = 0.25
-                  }}
-                >
-                  0.25x
-                </MenuItemOption>
-                <MenuItemOption
-                  value="0.5"
-                  onClick={() => {
-                    audioRef.current.playbackRate = 0.5
-                  }}
-                >
-                  0.5x
-                </MenuItemOption>
-                <MenuItemOption
-                  value="1"
-                  onClick={() => {
-                    audioRef.current.playbackRate = 1
-                  }}
-                >
-                  1.0x
-                </MenuItemOption>
-                <MenuItemOption
-                  value="1.5"
-                  onClick={() => {
-                    audioRef.current.playbackRate = 1.5
-                  }}
-                >
-                  1.5x
-                </MenuItemOption>
-                <MenuItemOption
-                  value="2"
-                  onClick={() => {
-                    audioRef.current.playbackRate = 2
-                  }}
-                >
-                  2.0x
-                </MenuItemOption>
-              </MenuOptionGroup>
-            </MenuList>
-          </Menu>
+          <SliderV color={color} updateGlobalNum={setPlayerVolume} />
+          <PlaySpeed audioRef={audioRef} color={color} />
         </Flex>
       </Center>
     </>
   )
+}
+
+Audio.propTypes = {
+  song: PropTypes.string,
+  color: PropTypes.string,
 }
