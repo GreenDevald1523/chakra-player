@@ -8,68 +8,69 @@ import {
   MenuOptionGroup,
   MenuItemOption,
   Center,
-} from '@chakra-ui/react';
-import React, { useState, useRef } from 'react';
-import song from '../img/armenia.mp3';
-import Speed from '../img/speed.svg';
-import pauseB from '../img/on.svg';
-import playB from '../img/off.svg';
-import ControlPanel from '../components/controls/ControlPanel';
-import SliderC from '../components/slider/SliderC';
-import SliderV from '../components/slider/SliderV';
+} from '@chakra-ui/react'
+import { useState, useRef } from 'react'
+import song from '../img/armenia.mp3'
+import Speed from '../img/speed.svg'
+import pauseB from '../img/on.svg'
+import playB from '../img/off.svg'
+import ControlPanel from '../components/controls/ControlPanel'
+import SliderC from '../components/slider/SliderC'
+import SliderV from '../components/slider/SliderV'
 
 export default function Audio() {
-  const [btn, setBtn] = useState('on');
-  const [percentage, setPercentage] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [flag, setFlag] = useState(true);
-  const audioRef = useRef();
+  const [btn, setBtn] = useState('on')
+  const [percentage, setPercentage] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [duration, setDuration] = useState(0)
+  const [currentTime, setCurrentTime] = useState(0)
+  const [flag, setFlag] = useState(true)
+  const audioRef = useRef()
   const handleChange = () => {
-    const audio = audioRef.current;
+    const audio = audioRef.current
     if (flag) {
-      audio.volume = 0.66;
-      setFlag(false);
+      audio.volume = 0.66
+      setFlag(false)
     }
     if (!isPlaying) {
-      setIsPlaying(true);
-      audio.play();
-      setBtn('of');
+      setIsPlaying(true)
+      audio.play()
+      setBtn('of')
     } else {
-      setIsPlaying(false);
-      audio.pause();
-      setBtn('on');
+      setIsPlaying(false)
+      audio.pause()
+      setBtn('on')
     }
-  };
+  }
 
-  const setPlayerCurrentTime = time => {
-    if (audioRef.current !== undefined) audioRef.current.currentTime = time;
-  };
+  const setPlayerCurrentTime = (time) => {
+    if (audioRef.current !== undefined) audioRef.current.currentTime = time
+  }
 
-  const setPlayerVolume = sound => {
-    if (audioRef.current !== undefined) audioRef.current.volume = sound / 100;
-  };
+  const setPlayerVolume = (sound) => {
+    if (audioRef.current !== undefined) audioRef.current.volume = sound / 100
+  }
 
-  const handleMetaUpdate = e => {
+  const handleMetaUpdate = (e) => {
     const percent = (
       (e.currentTarget.currentTime / e.currentTarget.duration) *
       100
-    ).toFixed(2);
-    setPercentage(+percent);
-    setCurrentTime(e.currentTarget.currentTime);
-    setDuration(e.currentTarget.duration);
-  };
+    ).toFixed(2)
+    setPercentage(+percent)
+    setCurrentTime(e.currentTarget.currentTime)
+    setDuration(e.currentTarget.duration)
+  }
 
   return (
     <>
       {/* Компонент плеера */}
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio
         onTimeUpdate={handleMetaUpdate}
         onLoadedMetadata={handleMetaUpdate}
         ref={audioRef}
         src={song}
-      ></audio>
+      />
       {/* UI плеера */}
       <Center p={5}>
         <Flex
@@ -103,31 +104,41 @@ export default function Audio() {
               <MenuOptionGroup defaultValue="1">
                 <MenuItemOption
                   value="0.25"
-                  onClick={() => (audioRef.current.playbackRate = 0.25)}
+                  onClick={() => {
+                    audioRef.current.playbackRate = 0.25
+                  }}
                 >
                   0.25x
                 </MenuItemOption>
                 <MenuItemOption
                   value="0.5"
-                  onClick={() => (audioRef.current.playbackRate = 0.5)}
+                  onClick={() => {
+                    audioRef.current.playbackRate = 0.5
+                  }}
                 >
                   0.5x
                 </MenuItemOption>
                 <MenuItemOption
                   value="1"
-                  onClick={() => (audioRef.current.playbackRate = 1)}
+                  onClick={() => {
+                    audioRef.current.playbackRate = 1
+                  }}
                 >
                   1.0x
                 </MenuItemOption>
                 <MenuItemOption
                   value="1.5"
-                  onClick={() => (audioRef.current.playbackRate = 1.5)}
+                  onClick={() => {
+                    audioRef.current.playbackRate = 1.5
+                  }}
                 >
                   1.5x
                 </MenuItemOption>
                 <MenuItemOption
                   value="2"
-                  onClick={() => (audioRef.current.playbackRate = 2)}
+                  onClick={() => {
+                    audioRef.current.playbackRate = 2
+                  }}
                 >
                   2.0x
                 </MenuItemOption>
@@ -137,5 +148,5 @@ export default function Audio() {
         </Flex>
       </Center>
     </>
-  );
+  )
 }

@@ -1,7 +1,3 @@
-import { Center, Text } from '@chakra-ui/react';
-import React from 'react';
-
-function ControlPanel({ duration, currentTime }) {
   function secondsToHms(seconds) {
     if (!seconds) return '00:00';
 
@@ -29,6 +25,10 @@ function ControlPanel({ duration, currentTime }) {
       return `${min}:${sec}`;
     }
   }
+import PropTypes from 'prop-types'
+import { Center, Text } from '@chakra-ui/react'
+
+function ControlPanel({ duration, currentTime }) {
 
   return (
     <Center minW="6em">
@@ -39,6 +39,11 @@ function ControlPanel({ duration, currentTime }) {
         {secondsToHms(duration)}
       </Text>
     </Center>
-  );
+  )
 }
-export default ControlPanel;
+
+ControlPanel.propTypes = {
+  duration: PropTypes.number.isRequired,
+  currentTime: PropTypes.number.isRequired,
+}
+export default ControlPanel
