@@ -25,7 +25,30 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "airbnb",
+      "airbnb/hooks",
+      "plugin:react/jsx-runtime",
+      "prettier"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": [
+        "error",
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react/require-default-props": [
+        "error",
+        {
+          "functions": "defaultArguments"
+        }
+      ]
+    }
   },
   "prettier": {
     "arrowParens": "always",
@@ -67,8 +90,14 @@
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.5",
-    "@babel/preset-env": "^7.18.2"
+    "@babel/preset-env": "^7.18.2",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "2.7.1"
   }
 }
