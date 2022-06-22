@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import { Flex, Center } from '@chakra-ui/react'
 import { useState, useRef } from 'react'
-import song from '../img/armenia.mp3'
 
 // Components
 import ControlPanel from '../components/controls/ControlPanel'
@@ -10,8 +9,11 @@ import SliderV from '../components/slider/SliderV'
 import PlayPause from '../components/controls/PlayPause'
 import PlaySpeed from '../components/controls/PlaySpeed'
 
+// Music Example
+import armeniaSongExample from '../img/armenia.mp3'
 
 export default function Audio({
+  song = armeniaSongExample,
   color = 'blue.600',
 }) {
   const [btn, setBtn] = useState('on')
