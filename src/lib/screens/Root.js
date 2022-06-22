@@ -24,7 +24,6 @@ export default function Audio() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [volume, setVolume] = useState(50);
   const [flag, setFlag] = useState(true);
   const audioRef = useRef();
   const handleChange = () => {
@@ -42,10 +41,6 @@ export default function Audio() {
       audio.pause();
       setBtn('on');
     }
-  };
-
-  const handleVolume = e => {
-    setVolume(e.currentTarget.volume * 100);
   };
 
   const setPlayerCurrentTime = time => {
@@ -72,7 +67,6 @@ export default function Audio() {
       <audio
         onTimeUpdate={handleMetaUpdate}
         onLoadedMetadata={handleMetaUpdate}
-        onVolumeChange={handleVolume}
         ref={audioRef}
         src={song}
       ></audio>
