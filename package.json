@@ -1,10 +1,11 @@
 {
-  "name": "last-vers",
-  "version": "0.1.0",
-  "private": true,
+  "name": "chakra-player",
+  "version": "0.1.2",
+  "private": false,
   "licence": "MIT",
   "homepage": "https://greendevald1523.github.io/player/",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
@@ -23,7 +24,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -41,5 +42,29 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "React player, made with [`Chakra UI`](https://chakra-ui.com/), can play the audio that you push in it.",
+  "main": "dist/index.js",
+  "module": "dist/index,js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreenDevald1523/player.git"
+  },
+  "keywords": [
+    "chakra-player"
+  ],
+  "author": "moonlancer",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GreenDevald1523/player/issues"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2"
   }
 }
