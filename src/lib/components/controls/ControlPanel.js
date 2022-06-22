@@ -1,34 +1,31 @@
-  function secondsToHms(seconds) {
-    if (!seconds) return '00:00';
-
-    let duration = seconds;
-    let hours = duration / 3600;
-    duration = duration % 3600;
-
-    let min = parseInt(duration / 60);
-    duration = duration % 60;
-
-    let sec = parseInt(duration);
-
-    if (sec < 10) {
-      sec = `0${sec}`;
-    }
-    if (min < 10) {
-      min = `0${min}`;
-    }
-
-    if (parseInt(hours, 10) > 0) {
-      return `${parseInt(hours, 10)}:${min}:${sec}`;
-    } else if (min === 0) {
-      return `00:${sec}`;
-    } else {
-      return `${min}:${sec}`;
-    }
-  }
 import PropTypes from 'prop-types'
 import { Center, Text } from '@chakra-ui/react'
 
 function ControlPanel({ duration, currentTime }) {
+  function secondsToHms(seconds) {
+    if (!seconds) return '00:00'
+
+    let totalTime = seconds
+    let hours = Math.trunc(totalTime / 3600)
+    totalTime %= 3600
+
+    let min = Math.trunc(totalTime / 60)
+    totalTime %= 60
+
+    let sec = Math.trunc(totalTime)
+
+    if (hours < 10) hours = `0${hours}`
+    if (min < 10) min = `0${min}`
+    if (sec < 10) sec = `0${sec}`
+
+    if (hours > 0) {
+      return `${hours}:${min}:${sec}`
+    }
+    if (min > 0) {
+      return `${min}:${sec}`
+    }
+    return `00:${sec}`
+  }
 
   return (
     <Center minW="6em">
