@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Img, IconButton, Center } from '@chakra-ui/react'
-import vol1 from './vol1.svg'
-import vol2 from './vol2.svg'
-import vol3 from './vol3.svg'
-import vol4 from './vol4.svg'
+import { Icon, IconButton, Center } from '@chakra-ui/react'
+import { ReactComponent as vol1 } from './vol1.svg'
+import { ReactComponent as vol2 } from './vol2.svg'
+import { ReactComponent as vol3 } from './vol3.svg'
+import { ReactComponent as vol4 } from './vol4.svg'
 
-function SliderV({ updateGlobalNum }) {
+function SliderV({ updateGlobalNum, color }) {
   const [music, setMusic] = useState(vol3)
   const [count, setCount] = useState(2)
 
@@ -37,7 +37,7 @@ function SliderV({ updateGlobalNum }) {
       bg="none"
     >
       <Center>
-        <Img src={music} alt="muz" />
+        <Icon color={color} as={music} alt="muz" />
       </Center>
     </IconButton>
   )
@@ -45,6 +45,7 @@ function SliderV({ updateGlobalNum }) {
 
 SliderV.propTypes = {
   updateGlobalNum: PropTypes.func.isRequired,
+  color: PropTypes.string.isRequired,
 }
 
 export default SliderV

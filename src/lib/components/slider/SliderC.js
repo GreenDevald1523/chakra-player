@@ -8,7 +8,7 @@ import {
   Center,
 } from '@chakra-ui/react'
 
-function SliderC({ percentage = 0, updatePlayerTime, value, max }) {
+function SliderC({ percentage = 0, updatePlayerTime, value, max, color }) {
   const [progressBarWidth, setProgressBarWidth] = useState(0)
   const rangeRef = useRef()
   const thumbRef = useRef()
@@ -35,7 +35,7 @@ function SliderC({ percentage = 0, updatePlayerTime, value, max }) {
         onChange={(e) => updatePlayerTime(e)}
       >
         <SliderTrack w={progressBarWidth}>
-          <SliderFilledTrack />
+          <SliderFilledTrack bg={color} />
         </SliderTrack>
         <SliderThumb ref={thumbRef} />
       </Slider>
@@ -48,6 +48,7 @@ SliderC.propTypes = {
   updatePlayerTime: PropTypes.func.isRequired,
   value: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
 }
 
 export default SliderC

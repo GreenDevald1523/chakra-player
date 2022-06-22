@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { Center, Text } from '@chakra-ui/react'
 
-function ControlPanel({ duration, currentTime }) {
+function ControlPanel({ duration, currentTime, color }) {
   function secondsToHms(seconds) {
     if (!seconds) return '00:00'
 
@@ -28,11 +28,11 @@ function ControlPanel({ duration, currentTime }) {
   }
 
   return (
-    <Center minW="6em">
-      <Text fontSize="md" color="#2B6CB0">
+    <Center minW="7em">
+      <Text fontSize="md" color={color}>
         {secondsToHms(currentTime)}/
       </Text>
-      <Text fontSize="md" color="#2B6CB0">
+      <Text fontSize="md" color={color}>
         {secondsToHms(duration)}
       </Text>
     </Center>
@@ -42,5 +42,6 @@ function ControlPanel({ duration, currentTime }) {
 ControlPanel.propTypes = {
   duration: PropTypes.number.isRequired,
   currentTime: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
 }
 export default ControlPanel
