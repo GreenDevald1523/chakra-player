@@ -45,7 +45,7 @@ function SliderC({ percentage = 0, updatePlayerTime, value, max }) {
 
 SliderC.propTypes = {
   percentage: PropTypes.number,
-  updatePlayerTime: PropTypes.number.isRequired,
+  updatePlayerTime: PropTypes.func.isRequired,
   value: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
 }
