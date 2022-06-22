@@ -34,7 +34,7 @@ import song form './audio.mp3'
 
 Prop | Description | Default
 ---- | ----------- | -------
-`url` | The url or file of an audio that has to be in `.mp3/.mp4` format
+`song` | The url or file of an audio that has to be in `.mp3/.mp4` format
 
 ### Demo
 
