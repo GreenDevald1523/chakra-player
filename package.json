@@ -3,7 +3,7 @@
   "version": "0.3.7",
   "private": false,
   "licence": "MIT",
-  "homepage": "https://greendevald1523.github.io/player/",
+  "homepage": "https://greendevald1523.github.io/chakra-player/",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@chakra-ui/react": "^2.2.1",
@@ -74,7 +74,7 @@
   "module": "dist/index,js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GreenDevald1523/player.git"
+    "url": "git+https://github.com/GreenDevald1523/chakra-player.git"
   },
   "keywords": [
     "chakra-player"
@@ -86,7 +86,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/GreenDevald1523/player/issues"
+    "url": "https://github.com/GreenDevald1523/chakra-player/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
