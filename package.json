@@ -27,6 +27,12 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "prettier": {
+    "arrowParens": "always",
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "semi": false
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -62,5 +68,7 @@
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2"
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "2.7.1"
   }
 }
