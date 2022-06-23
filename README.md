@@ -16,17 +16,17 @@ yarn add chakra-player
 
 ```jsx
 import React from 'react'
-import { Audio } from 'chakra-player'
+import Audio from 'chakra-player'
 
 // Add {.mp3 / .mp4} file format
-;<Audio song="****.mp3" />
+<Audio song="****.mp3" />
 ```
 
 Instead of using a common `url` of a `.mp3`, you also can download this file to your project folder and refer to it:
 
 ```jsx
 import React from 'react'
-import { Audio } from 'chakra-player'
+import Audio from 'chakra-player'
 import song form './audio.mp3'
 
 // Add {.mp3 / .mp4} file format
