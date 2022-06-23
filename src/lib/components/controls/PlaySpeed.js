@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 
 // Icons
-import { ReactComponent as speed } from '../../img/speed.svg'
+import { ReactComponent as speed } from '../../assets/imgs/speed.svg'
 
 export default function PlaySpeed({ audioRef, color }) {
   return (

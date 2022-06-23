@@ -2,8 +2,8 @@ import PropTypes from 'prop-types'
 import { IconButton, Center, Icon } from '@chakra-ui/react'
 
 // Icons
-import { ReactComponent as pauseB } from '../../img/on.svg'
-import { ReactComponent as playB } from '../../img/off.svg'
+import { ReactComponent as pauseB } from '../../assets/imgs/on.svg'
+import { ReactComponent as playB } from '../../assets/imgs/off.svg'
 
 export default function PlayPause({ handleChange, color, btn }) {
   return (

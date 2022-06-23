@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Icon, IconButton, Center } from '@chakra-ui/react'
-import { ReactComponent as vol1 } from './vol1.svg'
-import { ReactComponent as vol2 } from './vol2.svg'
-import { ReactComponent as vol3 } from './vol3.svg'
-import { ReactComponent as vol4 } from './vol4.svg'
+import { ReactComponent as vol1 } from '../../assets/imgs/vol1.svg'
+import { ReactComponent as vol2 } from '../../assets/imgs/vol2.svg'
+import { ReactComponent as vol3 } from '../../assets/imgs/vol3.svg'
+import { ReactComponent as vol4 } from '../../assets/imgs/vol4.svg'
 
 function SliderV({ updateGlobalNum, color }) {
   const [music, setMusic] = useState(vol3)

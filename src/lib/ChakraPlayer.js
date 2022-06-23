@@ -3,19 +3,13 @@ import { Flex, Center } from '@chakra-ui/react'
 import { useState, useRef } from 'react'
 
 // Components
-import ControlPanel from '../components/controls/ControlPanel'
-import SliderC from '../components/slider/SliderC'
-import SliderV from '../components/slider/SliderV'
-import PlayPause from '../components/controls/PlayPause'
-import PlaySpeed from '../components/controls/PlaySpeed'
+import ControlPanel from './components/controls/ControlPanel'
+import SliderC from './components/sliders/SliderC'
+import SliderV from './components/sliders/SliderV'
+import PlayPause from './components/controls/PlayPause'
+import PlaySpeed from './components/controls/PlaySpeed'
 
-// Music Example
-import armeniaSongExample from '../img/armenia.mp3'
-
-export default function Audio({
-  song = armeniaSongExample,
-  color = 'blue.600',
-}) {
+export default function Audio({ song, color = 'blue.600' }) {
   const [btn, setBtn] = useState('on')
   const [percentage, setPercentage] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -93,6 +87,6 @@ export default function Audio({
 }
 
 Audio.propTypes = {
-  song: PropTypes.string,
+  song: PropTypes.string.isRequired,
   color: PropTypes.string,
 }
