@@ -70,8 +70,8 @@
     ]
   },
   "description": "React player, made with [`Chakra UI`](https://chakra-ui.com/), can play the audio that you push in it.",
-  "main": "dist/index.js",
-  "module": "dist/index,js",
+  "main": "dist/ChakraPlayer.js",
+  "module": "dist/ChakraPlayer.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GreenDevald1523/chakra-player.git"
