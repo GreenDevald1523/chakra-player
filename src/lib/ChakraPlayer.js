@@ -9,6 +9,7 @@ import SliderV from './components/sliders/SliderV'
 import PlayPause from './components/controls/PlayPause'
 import PlaySpeed from './components/controls/PlaySpeed'
 
+// eslint-disable-next-line react/require-default-props
 export default function Audio({ song, color = 'blue.600' }) {
   const [btn, setBtn] = useState('on')
   const [percentage, setPercentage] = useState(0)
