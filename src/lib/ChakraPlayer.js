@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Flex, Center } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { useState, useRef } from 'react'
 
 // Components
@@ -64,25 +64,30 @@ export default function Audio({ song, color = 'blue.600' }) {
         src={song}
       />
       {/* UI плеера */}
-      <Center w="100%">
-        <Flex px="2em" py="1em" borderRadius={20} bg="white" w="100%">
-          <PlayPause handleChange={handleChange} color={color} btn={btn} />
-          <ControlPanel
-            color={color}
-            duration={duration}
-            currentTime={currentTime}
-          />
-          <SliderC
-            color={color}
-            percentage={percentage}
-            max={duration || 1}
-            updatePlayerTime={setPlayerCurrentTime}
-            value={currentTime}
-          />
-          <SliderV color={color} updateGlobalNum={setPlayerVolume} />
-          <PlaySpeed audioRef={audioRef} color={color} />
-        </Flex>
-      </Center>
+      <Flex
+        px="2em"
+        py="1em"
+        borderRadius={20}
+        bg="white"
+        w="100%"
+        alignItems="center"
+      >
+        <PlayPause handleChange={handleChange} color={color} btn={btn} />
+        <ControlPanel
+          color={color}
+          duration={duration}
+          currentTime={currentTime}
+        />
+        <SliderC
+          color={color}
+          percentage={percentage}
+          max={duration || 1}
+          updatePlayerTime={setPlayerCurrentTime}
+          value={currentTime}
+        />
+        <SliderV color={color} updateGlobalNum={setPlayerVolume} />
+        <PlaySpeed audioRef={audioRef} color={color} />
+      </Flex>
     </>
   )
 }
