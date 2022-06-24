@@ -87,6 +87,6 @@ export default function Audio({ song, color = 'blue.600' }) {
 }
 
 Audio.propTypes = {
-  song: PropTypes.string.isRequired,
+  song: PropTypes.string,
   color: PropTypes.string,
 }
