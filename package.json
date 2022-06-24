@@ -1,6 +1,6 @@
 {
   "name": "chakra-player",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "private": false,
   "licence": "MIT",
   "homepage": "https://greendevald1523.github.io/chakra-player/",
@@ -12,8 +12,6 @@
     "framer-motion": "^6.2.9",
     "gh-pages": "^4.0.0",
     "prop-types": "^15.8.1",
-    "react": "18.x",
-    "react-dom": "18.x",
     "react-icons": "^3.0.0",
     "react-scripts": "5.0.1"
   },

@@ -1,4 +1,4 @@
-# chakra-player `v0.4.2`
+# chakra-player `v0.4.3`
 
 React player, made with [`Chakra UI`](https://chakra-ui.com/), can play the audio that you push in it.
 
