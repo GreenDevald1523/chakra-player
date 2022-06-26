@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import ReactDOM from 'react-dom'
 // Chakra-UI
 import { Center, ChakraProvider, Heading, Stack } from '@chakra-ui/react'
 
@@ -9,10 +9,7 @@ import Audio from './lib/ChakraPlayer'
 // Music Example
 import armeniaSongExample from './assets/music/armenia.mp3'
 
-const container = document.getElementById('root')
-const root = createRoot(container)
-
-root.render(
+ReactDOM.render(
   <StrictMode>
     <ChakraProvider>
       <Center h="100vh">
@@ -20,11 +17,12 @@ root.render(
           <Heading textAlign="center" size="lg">
             Example Chakra player
           </Heading>
-          <Audio song={armeniaSongExample} color="purple.600" />
+          <Audio song={armeniaSongExample} color="purple.600" background='white.600'/>
         </Stack>
       </Center>
     </ChakraProvider>
-  </StrictMode>
+  </StrictMode>,
+  document.getElementById('root')
 )
 
 export default Audio

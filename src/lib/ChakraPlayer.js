@@ -10,7 +10,7 @@ import PlayPause from './components/controls/PlayPause'
 import PlaySpeed from './components/controls/PlaySpeed'
 
 // eslint-disable-next-line react/require-default-props
-export default function Audio({ song, color = 'blue.600' }) {
+export default function Audio({ song, color = 'blue.600', background = 'white' }) {
   const [btn, setBtn] = useState('on')
   const [percentage, setPercentage] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -68,7 +68,7 @@ export default function Audio({ song, color = 'blue.600' }) {
         px="2em"
         py="1em"
         borderRadius={20}
-        bg="white"
+        bg={background}
         w="100%"
         alignItems="center"
       >
@@ -95,4 +95,5 @@ export default function Audio({ song, color = 'blue.600' }) {
 Audio.propTypes = {
   song: PropTypes.string,
   color: PropTypes.string,
+  background: PropTypes.string
 }
