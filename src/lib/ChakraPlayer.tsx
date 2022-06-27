@@ -35,15 +35,15 @@ export default function Audio({ song, color = 'blue.600', background = 'white' }
     }
   }
 
-  const setPlayerCurrentTime = (time) => {
+  const setPlayerCurrentTime = (time: number) => {
     if (audioRef.current !== undefined) audioRef.current.currentTime = time
   }
 
-  const setPlayerVolume = (sound) => {
+  const setPlayerVolume = (sound: number) => {
     if (audioRef.current !== undefined) audioRef.current.volume = sound / 100
   }
 
-  const handleMetaUpdate = (e) => {
+  const handleMetaUpdate = (e: any) => {
     const percent = (
       (e.currentTarget.currentTime / e.currentTarget.duration) *
       100

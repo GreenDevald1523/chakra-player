@@ -31,6 +31,7 @@ function SliderV({ updateGlobalNum, color }) {
   }
   return (
     <IconButton
+      aria-label='iconbtn'
       boxSize="2em"
       onClick={handleLoudChange}
       variant="unstyled"

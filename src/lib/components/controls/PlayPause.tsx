@@ -8,6 +8,7 @@ import { ReactComponent as playB } from '../../assets/imgs/off.svg'
 export default function PlayPause({ handleChange, color, btn }) {
   return (
     <IconButton
+      aria-label="iconbtn"
       boxSize="2em"
       target="_blank"
       onClick={handleChange}
